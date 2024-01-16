@@ -6,8 +6,8 @@ extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 
-func _ready():
-	animation_tree.set("parameters/idle/blend_position", starting_direction)
+#func _ready():
+#	animation_tree.set("parameters/idle/blend_position", starting_direction)
 
 func _physics_process(_delta):
 	#Get Input Direction
