@@ -170,69 +170,67 @@ _data = {
 "walk_up": SubResource("Animation_o7nfg")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_obuxm"]
-animation = &"idle_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wx56l"]
-animation = &"idle_down"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_grpep"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iit8d"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w2cgt"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_evbf2"]
 animation = &"idle_right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_1bqml"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_obuxm")
-blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_wx56l")
-blend_point_1/pos = Vector2(0, -0.9)
-blend_point_2/node = SubResource("AnimationNodeAnimation_grpep")
-blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_w2cgt")
-blend_point_3/pos = Vector2(1, 0)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i2sel"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ja1d"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_10tgb"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_iit8d")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_evbf2")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_i2sel")
+blend_point_2/pos = Vector2(0, 1.1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_8ja1d")
+blend_point_3/pos = Vector2(0, -1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5vk3a"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0e1ti"]
 animation = &"walk_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5w7lw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v7v11"]
 animation = &"walk_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkexf"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vqn5s"]
 animation = &"walk_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bc3le"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu2g7"]
 animation = &"walk_right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_cdta3"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_5vk3a")
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ayi87"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_0e1ti")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_5w7lw")
-blend_point_1/pos = Vector2(0, -0.9)
-blend_point_2/node = SubResource("AnimationNodeAnimation_fkexf")
-blend_point_2/pos = Vector2(-1, 0.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_bc3le")
+blend_point_1/node = SubResource("AnimationNodeAnimation_v7v11")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_vqn5s")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_pu2g7")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_asqv8"]
-advance_mode = 0
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2xyil"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_056u6"]
-advance_mode = 0
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0t8yg"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tgrhl"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ycda0"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wsvt0"]
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_1bqml")
-states/idle/position = Vector2(317, 92)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_cdta3")
-states/walk/position = Vector2(446, 80)
-transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_asqv8"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_056u6"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_tgrhl")]
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_10tgb")
+states/idle/position = Vector2(331, 100)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_ayi87")
+states/walk/position = Vector2(478, 100)
+transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_2xyil"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_0t8yg"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_ycda0")]
 
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_a5kyx")
@@ -246,16 +244,16 @@ vframes = 4
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_ekvwq")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_150iq")
+}
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_150iq")
 }
 tree_root = SubResource("AnimationNodeStateMachine_wsvt0")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(-0.562604, -0.0158731)
+parameters/idle/blend_position = Vector2(0, -0.1)
 parameters/walk/blend_position = Vector2(0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_150iq")
-}
