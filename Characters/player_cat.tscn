@@ -196,10 +196,10 @@ max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0e1ti"]
-animation = &"walk_up"
+animation = &"walk_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v7v11"]
-animation = &"walk_down"
+animation = &"walk_up"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vqn5s"]
 animation = &"walk_left"
@@ -261,4 +261,4 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_wsvt0")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/blend_position = Vector2(-0.184953, 0.395425)
-parameters/walk/blend_position = Vector2(-0.102194, -0.431373)
+parameters/walk/blend_position = Vector2(-0.000626981, -1.07124)
