@@ -25,7 +25,7 @@ func _physics_process(_delta):
 	# Move and Slide function uses velocity of character body to move character on map
 	move_and_slide()	
 	pick_new_state()
-	# Updates animation parameters 
+	# Updates animation parameter
 func update_animation_parameters(move_input : Vector2):
 		
 	if(move_input != Vector2.ZERO):
