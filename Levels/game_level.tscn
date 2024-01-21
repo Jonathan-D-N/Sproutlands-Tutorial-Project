@@ -849,21 +849,3 @@ position_smoothing_speed = 10.0
 
 [node name="NPC_Cow" parent="." instance=ExtResource("8_lbx8u")]
 position = Vector2(326, 76)
-
-[node name="NPC_Cow2" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(309, 32)
-
-[node name="NPC_Cow3" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(220, 35)
-
-[node name="NPC_Cow4" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(166, 107)
-
-[node name="NPC_Cow6" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(201, 74)
-
-[node name="NPC_Cow7" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(147, 146)
-
-[node name="NPC_Cow5" parent="." instance=ExtResource("8_lbx8u")]
-position = Vector2(267, 138)

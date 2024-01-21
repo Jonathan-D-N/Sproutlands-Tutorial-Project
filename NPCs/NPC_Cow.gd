@@ -15,7 +15,13 @@ var move_direction : Vector2 = Vector2.ZERO
 var current_state : COW_STATE = COW_STATE.IDLE
 
 func _ready():
+	randomize_timer_start()
 	pick_new_state()
+	
+func randomize_timer_start():
+	#randomize the timer's wait time
+	timer.wait_time = randi_range(0.1, idle_time)
+	timer.start()
 
 func _physics_process(_delta):
 	if(current_state == COW_STATE.WALK):
@@ -39,19 +45,24 @@ func select_new_direction():
 	
 #switch from walking to idling
 func pick_new_state():
+	var min_time = 0.1
 	if(current_state == COW_STATE.IDLE):
 		select_new_direction()
 		if (move_direction.length() > 0 ):
 			state_machine.travel("cow_walk")
 			current_state = COW_STATE.WALK
-			timer.start(walk_time)
+			timer.wait_time = randi_range(min_time, walk_time)
+			#timer.start(walk_time)
+		else:
+			timer.wait_time = randi_range(min_time, idle_time)
 #	elif(current_state == COW_STATE.IDLE):
 #		state_machine.travel("cow_blink")
 #		current_state = COW_STATE.BLINK
 	elif(current_state == COW_STATE.WALK):
 		state_machine.travel("cow_idle")
 		current_state = COW_STATE.IDLE
-		timer.start(idle_time)
+		timer.wait_time = randi_range(min_time, idle_time)
+	timer.start()
 
 
 func _on_timer_timeout():
