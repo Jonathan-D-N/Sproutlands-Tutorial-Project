@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cwx5vsoss6dgl"]
+[gd_scene load_steps=25 format=3 uid="uid://cwx5vsoss6dgl"]
 
 [ext_resource type="Script" path="res://NPCs/NPC_Cow.gd" id="1_un3u7"]
 [ext_resource type="Texture2D" uid="uid://b62dfwbsf63wc" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_ygnvp"]
@@ -80,6 +80,9 @@ _data = {
 "cow_walk": SubResource("Animation_erhpp")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mdvfa"]
+animation = &"cow_blink"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ie4yh"]
 animation = &"cow_blink"
 
@@ -114,21 +117,29 @@ states/cow_walk/node = SubResource("AnimationNodeAnimation_vdkoa")
 states/cow_walk/position = Vector2(355, 100)
 transitions = ["Start", "cow_walk", SubResource("AnimationNodeStateMachineTransition_lxx7u")]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pr82m"]
-advance_mode = 0
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y1r71"]
-advance_mode = 0
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bl78d"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_peky5"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wb6gl"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5syrh"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rj5wi"]
+advance_mode = 0
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l7hh3"]
+states/cow_blink/node = SubResource("AnimationNodeAnimation_mdvfa")
+states/cow_blink/position = Vector2(523, 100)
 states/cow_idle/node = SubResource("AnimationNodeStateMachine_cmril")
 states/cow_idle/position = Vector2(376, 100)
 states/cow_walk/node = SubResource("AnimationNodeStateMachine_5v23p")
-states/cow_walk/position = Vector2(543, 100)
-transitions = ["cow_idle", "cow_walk", SubResource("AnimationNodeStateMachineTransition_pr82m"), "cow_walk", "cow_idle", SubResource("AnimationNodeStateMachineTransition_y1r71"), "Start", "cow_idle", SubResource("AnimationNodeStateMachineTransition_bl78d")]
+states/cow_walk/position = Vector2(718, 100)
+transitions = ["Start", "cow_idle", SubResource("AnimationNodeStateMachineTransition_bl78d"), "cow_idle", "cow_blink", SubResource("AnimationNodeStateMachineTransition_peky5"), "cow_blink", "cow_idle", SubResource("AnimationNodeStateMachineTransition_wb6gl"), "cow_blink", "cow_walk", SubResource("AnimationNodeStateMachineTransition_5syrh"), "cow_walk", "cow_blink", SubResource("AnimationNodeStateMachineTransition_rj5wi")]
 
 [node name="NPC_Cow" type="CharacterBody2D"]
 script = ExtResource("1_un3u7")
